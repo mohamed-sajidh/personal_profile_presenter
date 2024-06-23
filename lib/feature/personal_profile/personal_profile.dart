@@ -15,14 +15,31 @@ class _PersonalProfileState extends State<PersonalProfile> {
   Widget build(BuildContext context) {
     final orientation = MediaQuery.of(context).orientation;
     return Scaffold(
-      body: GridView.builder(
+      body: GetBuilder(
+        init: PersonalProfileController(),
+        builder: (controller) {
+          return Obx(() => controller.loading.isTrue ?
+          Center(child: CircularProgressIndicator()) :
+          GridView.builder(
         itemCount: 10,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: (orientation == Orientation.portrait) ? 2 : 3),
+            crossAxisCount: (orientation == Orientation.portrait) ? 1 : 3),
         itemBuilder: (BuildContext context, int index) {
-          return SingleProfileViewer();
+          return SingleProfileViewer(index: index);
+        },
+      ),
+          
+          );
         },
       ),
     );
   }
 }
+// body: GridView.builder(
+//         itemCount: 10,
+//         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//             crossAxisCount: (orientation == Orientation.portrait) ? 1 : 2),
+//         itemBuilder: (BuildContext context, int index) {
+//           return SingleProfileViewer();
+//         },
+//       ),
