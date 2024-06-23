@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_profile_presenter/feature/personal_profile/personal_profile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyApp(),
+      home: const PersonalProfile(),
     );
   }
 }
