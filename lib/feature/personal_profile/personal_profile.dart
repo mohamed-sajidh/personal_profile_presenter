@@ -62,20 +62,3 @@ class _PersonalProfileState extends State<PersonalProfile> {
     );
   }
 }
-// GridView.builder(
-//                     itemCount: controller.profile.length,
-//                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-//                         crossAxisCount:
-//                             (orientation == Orientation.portrait) ? 1 : 3),
-//                     itemBuilder: (BuildContext context, int index) {
-//                       return SingleProfileViewer(index: index);
-//                     },
-//                   )
-
-
-
-// ListView.separated(
-//                     itemBuilder: (context, index) =>
-//                         SingleProfileViewer(index: index),
-//                     separatorBuilder: (context, index) => const Divider(),
-//                     itemCount: controller.profile.length),

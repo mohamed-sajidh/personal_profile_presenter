@@ -13,7 +13,6 @@ class PersonalProfileController extends GetxController {
   }
 
   Future<void> getUserProfile() async {
-    print("----------------------------------------------------------");
     try {
       loading(true);
       final response = await Dio().get("https://jsonplaceholder.typicode.com/users");

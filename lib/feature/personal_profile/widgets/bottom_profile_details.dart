@@ -52,7 +52,6 @@ class BottomProfileDetails extends StatelessWidget {
                     SizedBox(
                       height: 14,
                       width: width > 1100 ? 340 : 328,
-                      // color: Colors.red,
                       child: Center(
                         child: Text(
                           controller.profile[index].company.catchPhrase,
