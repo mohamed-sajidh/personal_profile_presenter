@@ -19,11 +19,11 @@ class _SingleProfileViewerState extends State<SingleProfileViewer> {
         Get.put(PersonalProfileController());
     var screeenSize = MediaQuery.of(context).size;
     var width = screeenSize.width;
+    var height = screeenSize.height;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        height: 500,
-        width: 50,
+        height: height * 0.3,
         decoration: const BoxDecoration(
           color: Colors.white,
           boxShadow: [BoxShadow(blurRadius: 5)],
@@ -32,10 +32,9 @@ class _SingleProfileViewerState extends State<SingleProfileViewer> {
           ),
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              height: 65,
+              height: height * 0.06,
               decoration: const BoxDecoration(
                 color: Color.fromARGB(255, 57, 56, 56),
                 borderRadius: BorderRadius.only(
@@ -44,29 +43,30 @@ class _SingleProfileViewerState extends State<SingleProfileViewer> {
                 ),
               ),
               child: Center(
-                  child: Text(
-                controller.profile[widget.index].name,
-                style: TextStyle(
-                    fontSize: width > 643 && width < 1200 ? 15 : 25,
-                    color: Colors.white),
-              )),
+                child: Text(
+                  controller.profile[widget.index].name,
+                  style: TextStyle(
+                      fontSize: width > 643 && width < 1200 ? 15 : 25,
+                      color: Colors.white),
+                ),
+              ),
             ),
             SizedBox(
-              height: width > 1100 ? 160 : 150,
+              height: height * 0.176,
               child: Row(
                 children: [
                   Column(
                     children: [
                       Container(
-                        height: width > 1100 ? 160 : 150,
-                        width: 140,
+                        height: height * 0.176,
+                        width: width * 0.3,
                         color: Colors.white,
                         child: Stack(
                           children: [
                             Positioned(
                               child: Container(
-                                height: width > 1100 ? 55 : 50,
-                                width: 140,
+                                height: height * 0.06,
+                                width: width * 0.3,
                                 decoration: const BoxDecoration(
                                   color: Color.fromARGB(255, 57, 56, 56),
                                   borderRadius: BorderRadius.only(
@@ -76,10 +76,10 @@ class _SingleProfileViewerState extends State<SingleProfileViewer> {
                               ),
                             ),
                             Positioned(
-                              top: 100,
+                              top: height * 0.12,
                               child: Container(
-                                height: width > 1100 ? 60 : 50,
-                                width: 140,
+                                height: height * 0.06,
+                                width: width * 0.3,
                                 decoration: const BoxDecoration(
                                   color: Color.fromARGB(229, 1, 49, 131),
                                   borderRadius: BorderRadius.only(
@@ -90,8 +90,8 @@ class _SingleProfileViewerState extends State<SingleProfileViewer> {
                             ),
                             Center(
                               child: Container(
-                                width: 100,
-                                height: 115,
+                                height: height * 0.12,
+                                width: width * 0.22,
                                 decoration: const BoxDecoration(
                                   color: Colors.white,
                                   boxShadow: [
@@ -105,7 +105,7 @@ class _SingleProfileViewerState extends State<SingleProfileViewer> {
                                 child: const Center(
                                   child: Icon(
                                     Icons.person,
-                                    size: 100,
+                                    size: 80,
                                     color: Color.fromARGB(229, 1, 49, 131),
                                   ),
                                 ),
@@ -116,7 +116,7 @@ class _SingleProfileViewerState extends State<SingleProfileViewer> {
                       ),
                     ],
                   ),
-                  const SizedBox(width: 10),
+                  SizedBox(width: width * 0.01),
                   SinglePersonalDetails(
                     index: widget.index,
                   )

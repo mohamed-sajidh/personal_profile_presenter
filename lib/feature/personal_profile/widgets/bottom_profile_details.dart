@@ -12,8 +12,9 @@ class BottomProfileDetails extends StatelessWidget {
         Get.put(PersonalProfileController());
     var screeenSize = MediaQuery.of(context).size;
     var width = screeenSize.width;
+    var height = screeenSize.height;
     return Container(
-      height: 59,
+      height: height * 0.064,
       decoration: const BoxDecoration(
         color: Color.fromARGB(229, 1, 49, 131),
         borderRadius: BorderRadius.only(
@@ -24,7 +25,7 @@ class BottomProfileDetails extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(
-            width: 140,
+            width: width * 0.3,
             child: Center(
               child: Text(
                 controller.profile[index].username,
@@ -32,47 +33,43 @@ class BottomProfileDetails extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5),
-            child: SizedBox(
-                width: width > 1100 ? 340 : 328,
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 14,
-                      width: width > 1100 ? 340 : 328,
-                      child: Center(
-                        child: Text(
-                          controller.profile[index].company.name,
-                          style:
-                              const TextStyle(color: Colors.white, fontSize: 9),
-                        ),
-                      ),
+          Container(
+            width: width * 0.61,
+            padding: const EdgeInsets.only(top: 2),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: height * 0.015,
+                  width: width * 0.61,
+                  child: Center(
+                    child: Text(
+                      controller.profile[index].company.name,
+                      style: const TextStyle(color: Colors.white, fontSize: 8),
                     ),
-                    SizedBox(
-                      height: 14,
-                      width: width > 1100 ? 340 : 328,
-                      child: Center(
-                        child: Text(
-                          controller.profile[index].company.catchPhrase,
-                          style:
-                              const TextStyle(color: Colors.white, fontSize: 9),
-                        ),
-                      ),
+                  ),
+                ),
+                SizedBox(
+                  height: height * 0.015,
+                  width: width * 0.61,
+                  child: Center(
+                    child: Text(
+                      controller.profile[index].company.catchPhrase,
+                      style: const TextStyle(color: Colors.white, fontSize: 9),
                     ),
-                    SizedBox(
-                      height: 14,
-                      width: width > 1100 ? 340 : 328,
-                      child: Center(
-                        child: Text(
-                          controller.profile[index].company.bs,
-                          style:
-                              const TextStyle(color: Colors.white, fontSize: 9),
-                        ),
-                      ),
-                    )
-                  ],
-                )),
+                  ),
+                ),
+                SizedBox(
+                  height: height * 0.015,
+                  width: width * 0.61,
+                  child: Center(
+                    child: Text(
+                      controller.profile[index].company.bs,
+                      style: const TextStyle(color: Colors.white, fontSize: 9),
+                    ),
+                  ),
+                )
+              ],
+            ),
           )
         ],
       ),

@@ -12,171 +12,107 @@ class SinglePersonalDetails extends StatelessWidget {
         Get.put(PersonalProfileController());
     var screeenSize = MediaQuery.of(context).size;
     var width = screeenSize.width;
-    return SizedBox(
-      width: width > 1100 ? 330 : 310,
-      height: 130,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          SizedBox(
-            height: 25,
-            child: Row(
-              children: [
-                const SizedBox(
-                  width: 50,
-                  child: Center(
-                    child: Icon(Icons.phone),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 2),
-                  child: Text(
-                    controller.profile[index].phone,
-                    style: const TextStyle(fontWeight: FontWeight.w400),
-                  ),
-                )
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 25,
-            child: Row(
-              children: [
-                const SizedBox(
-                  width: 50,
-                  child: Center(
-                    child: Icon(Icons.email_rounded),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 2),
-                  child: Text(
-                    controller.profile[index].email,
-                    style: const TextStyle(fontWeight: FontWeight.w400),
-                  ),
-                )
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 25,
-            child: Row(
-              children: [
-                const SizedBox(
-                  width: 50,
-                  child: Center(
-                    child: Icon(Icons.web),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 2),
-                  child: Text(
-                    controller.profile[index].website,
-                    style: const TextStyle(fontWeight: FontWeight.w400),
-                  ),
-                )
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 45,
-            child: Row(
-              children: [
-                const SizedBox(
-                  width: 50,
-                  child: Center(
-                    child: Icon(Icons.location_on),
-                  ),
-                ),
-                SizedBox(
-                  height: 45,
-                  width: width > 1100 ? 280 : 260,
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 20,
-                        width: width > 1100 ? 280 : 260,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            SizedBox(
-                              width: 100,
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 1),
-                                child: Center(
-                                  child: Text(
-                                    "${controller.profile[index].address.street} ,",
-                                    style: const TextStyle(
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 80,
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 1),
-                                child: Text(
-                                  "${controller.profile[index].address.suite} ,",
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.w400),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 80,
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 1),
-                                child: Text(
-                                  "${controller.profile[index].address.city} ,",
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.w400),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+    var height = screeenSize.height;
+    return Padding(
+      padding: const EdgeInsets.all(4.0),
+      child: SizedBox(
+        width: width * 0.55,
+        height: height * 0.176,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SizedBox(
+              height: height * 0.027,
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: width * 0.050,
+                    child: const Center(
+                      child: Icon(
+                        Icons.phone,
+                        size: 20,
                       ),
-                      SizedBox(
-                        height: 20,
-                        width: width > 1100 ? 280 : 260,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            SizedBox(
-                              width: 100,
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 1),
-                                child: Center(
-                                  child: Text(
-                                    "${controller.profile[index].address.zipcode} ,",
-                                    style: const TextStyle(
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 160,
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 1),
-                                child: Text(
-                                  "${controller.profile[index].address.geo.lat}('lang'), ${controller.profile[index].address.geo.lng}('long')",
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.w400),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      )
-                    ],
+                    ),
                   ),
-                )
-              ],
+                  SizedBox(width: width * 0.015),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 2),
+                    child: Text(
+                      controller.profile[index].phone,
+                      style: const TextStyle(fontWeight: FontWeight.w400),
+                    ),
+                  )
+                ],
+              ),
             ),
-          ),
-        ],
+            SizedBox(
+              height: height * 0.027,
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: width * 0.050,
+                    child: const Center(
+                      child: Icon(Icons.email_rounded),
+                    ),
+                  ),
+                  SizedBox(width: width * 0.015),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 2),
+                    child: Text(
+                      controller.profile[index].email,
+                      style: const TextStyle(fontWeight: FontWeight.w400),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: height * 0.027,
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: width * 0.050,
+                    child: const Center(
+                      child: Icon(Icons.web),
+                    ),
+                  ),
+                  SizedBox(width: width * 0.015),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 2),
+                    child: Text(
+                      controller.profile[index].website,
+                      style: const TextStyle(fontWeight: FontWeight.w400),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: height * 0.047,
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: width * 0.050,
+                    child: const Center(
+                      child: Icon(Icons.location_on),
+                    ),
+                  ),
+                  SizedBox(width: width * 0.015),
+                  SizedBox(
+                    height: height * 0.047,
+                    width: width * 0.45,
+                    child: Text(
+                      maxLines: 2,
+                      "${controller.profile[index].address.street}, ${controller.profile[index].address.suite}, ${controller.profile[index].address.city}, ${controller.profile[index].address.zipcode}, ${controller.profile[index].address.geo.lat}('lang'), ${controller.profile[index].address.geo.lng}('long')",
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w400, fontSize: 11),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

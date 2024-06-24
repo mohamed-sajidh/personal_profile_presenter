@@ -40,25 +40,34 @@ class _PersonalProfileState extends State<PersonalProfile> {
                     ),
                   )
                 : Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: GridView.builder(
-                      itemCount: controller.profile.length,
-
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        childAspectRatio: 30/18,
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 10,
-                          crossAxisCount:
-                              (orientation == Orientation.portrait) ? 1 : 3
-                              ),
-                      itemBuilder: (BuildContext context, int index) {
-                        return SingleProfileViewer(index: index);
-                      },
-                    ),
-                )
+                    padding: const EdgeInsets.all(8.0),
+                    child: ListView.separated(
+                        itemBuilder: (context, index) {
+                          return SingleProfileViewer(index: index);
+                        },
+                        separatorBuilder: (context, index) => const Divider(),
+                        itemCount: controller.profile.length),
+                  ),
           );
         },
       ),
     );
   }
 }
+
+
+
+// child: GridView.builder(
+//                       itemCount: controller.profile.length,
+
+//                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//                         childAspectRatio: 30/18,
+//                         crossAxisSpacing: 10,
+//                         mainAxisSpacing: 10,
+//                           crossAxisCount:
+//                               (orientation == Orientation.portrait) ? 1 : 3
+//                               ),
+//                       itemBuilder: (BuildContext context, int index) {
+//                         return SingleProfileViewer(index: index);
+//                       },
+//                     ),
